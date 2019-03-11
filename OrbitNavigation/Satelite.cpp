@@ -25,9 +25,9 @@ std::vector<double> Satelite::F(double time, std::vector<double> &coordinates) {
 	double z = pow(Y[0] * Y[0] + Y[2] * Y[2], -1.5);
 
 	FY[0] = Y[1];
-	FY[1] = -(G * PlanetM * Y[0] / z) + (FengX(time) / m);
+	FY[1] = -(G * PlanetM * Y[0] * z) + (FengX(time) / m);
 	FY[2] = Y[3];
-	FY[3] = -(G * PlanetM * Y[2] / z) + (FengY(time) / m);
+	FY[3] = -(G * PlanetM * Y[2] * z) + (FengY(time) / m);
 
 	return FY;
 }

@@ -51,22 +51,23 @@ namespace OrbitNavigation {
 	}
 
 	System::Void MainWindow::RebuildAxis_Click(System::Object^  sender, System::EventArgs^  e) {
-		chart1->ChartAreas["ChartArea1"]->AxisX->Maximum = (double) xMax->Value;
-		chart1->ChartAreas["ChartArea1"]->AxisX->Minimum = - (double) xMax->Value;
-		chart1->ChartAreas["ChartArea1"]->AxisY->Maximum = (double) yMax->Value;
-		chart1->ChartAreas["ChartArea1"]->AxisY->Minimum = - (double) yMax->Value;
+		chart1->ChartAreas["ChartArea1"]->AxisX->Maximum =	(double) xMax->Value;
+		chart1->ChartAreas["ChartArea1"]->AxisX->Minimum = -(double) xMax->Value;
+		chart1->ChartAreas["ChartArea1"]->AxisY->Maximum =  (double) yMax->Value;
+		chart1->ChartAreas["ChartArea1"]->AxisY->Minimum = -(double) yMax->Value;
 	}
 
 	System::Void MainWindow::SatEngine_Click(System::Object^  sender, System::EventArgs^  e) {
-		s->StartEngine((double)EngineF->Value, (double)AngleF->Value, s->GetT(), (double)EngineT->Value);
+		if (s!=nullptr)
+			s->StartEngine((double)EngineF->Value, (double)AngleF->Value, s->GetT(), (double)EngineT->Value);
 	}
 
 	System::Void MainWindow::timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 		t += s->Step(timer1->Interval);
 
 		TimeLabel->Text = "Время со старта : " + ((Int64)t).ToString() + " c";
-		CoordsLabel->Text = "Координаты: " + s->GetX() + " км, " + s->GetY() + " км";
-		VelocityLabel->Text = "Скорость: " + s->GetV() +" км/с";
+		CoordsLabel->Text = "Координаты: " + ((Int64)s->GetX()).ToString() + " км, " + ((Int64)s->GetY()).ToString() + " км";
+		VelocityLabel->Text = "Скорость: " + ((Int64)s->GetV()).ToString() +" км/с";
 
 		chart1->Series["Series1"]->Points->AddXY(s->GetX(), s->GetY());
 	}
