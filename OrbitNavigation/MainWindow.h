@@ -134,11 +134,11 @@ namespace OrbitNavigation {
 		void InitializeComponent(void)
 		{
 			this->components = (gcnew System::ComponentModel::Container());
-			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
-			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
-			System::Windows::Forms::DataVisualization::Charting::DataPoint^  dataPoint3 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(0,
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea1 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^  dataPoint1 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(0,
 				L"0,6000"));
-			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series2 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
 			this->StatusLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->TimeLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
@@ -314,10 +314,10 @@ namespace OrbitNavigation {
 			// 
 			// AngleF
 			// 
-			this->AngleF->DecimalPlaces = 2;
-			this->AngleF->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 65536 });
+			this->AngleF->DecimalPlaces = 4;
+			this->AngleF->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 262144 });
 			this->AngleF->Location = System::Drawing::Point(29, 294);
-			this->AngleF->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 7, 0, 0, 0 });
+			this->AngleF->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1253305502, 146, 0, 720896 });
 			this->AngleF->Name = L"AngleF";
 			this->AngleF->Size = System::Drawing::Size(83, 20);
 			this->AngleF->TabIndex = 12;
@@ -329,9 +329,9 @@ namespace OrbitNavigation {
 			this->label5->AutoSize = true;
 			this->label5->Location = System::Drawing::Point(116, 297);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(13, 13);
+			this->label5->Size = System::Drawing::Size(25, 13);
 			this->label5->TabIndex = 13;
-			this->label5->Text = L"c";
+			this->label5->Text = L"рад";
 			// 
 			// label25
 			// 
@@ -388,7 +388,6 @@ namespace OrbitNavigation {
 			// 
 			this->EngineF->Location = System::Drawing::Point(29, 270);
 			this->EngineF->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->EngineF->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->EngineF->Name = L"EngineF";
 			this->EngineF->Size = System::Drawing::Size(83, 20);
 			this->EngineF->TabIndex = 6;
@@ -450,19 +449,18 @@ namespace OrbitNavigation {
 			this->Theta->Size = System::Drawing::Size(83, 20);
 			this->Theta->TabIndex = 2;
 			this->Theta->ThousandsSeparator = true;
-			this->Theta->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
+			this->Theta->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 157, 0, 0, 131072 });
 			// 
 			// v0
 			// 
 			this->v0->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->v0->Location = System::Drawing::Point(29, 167);
 			this->v0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->v0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->v0->Name = L"v0";
 			this->v0->Size = System::Drawing::Size(83, 20);
 			this->v0->TabIndex = 2;
 			this->v0->ThousandsSeparator = true;
-			this->v0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 45000, 0, 0, 0 });
+			this->v0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 64, 0, 0, 0 });
 			// 
 			// PlanetM
 			// 
@@ -470,7 +468,7 @@ namespace OrbitNavigation {
 			this->PlanetM->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 65536 });
 			this->PlanetM->Location = System::Drawing::Point(29, 45);
 			this->PlanetM->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000000, 0, 0, 0 });
-			this->PlanetM->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 131072 });
+			this->PlanetM->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 65536 });
 			this->PlanetM->Name = L"PlanetM";
 			this->PlanetM->Size = System::Drawing::Size(83, 20);
 			this->PlanetM->TabIndex = 2;
@@ -487,7 +485,6 @@ namespace OrbitNavigation {
 			this->phi0->Size = System::Drawing::Size(83, 20);
 			this->phi0->TabIndex = 2;
 			this->phi0->ThousandsSeparator = true;
-			this->phi0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			// 
 			// label15
 			// 
@@ -502,7 +499,7 @@ namespace OrbitNavigation {
 			// 
 			this->SatM->Location = System::Drawing::Point(29, 19);
 			this->SatM->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->SatM->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
+			this->SatM->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->SatM->Name = L"SatM";
 			this->SatM->Size = System::Drawing::Size(83, 20);
 			this->SatM->TabIndex = 2;
@@ -514,12 +511,11 @@ namespace OrbitNavigation {
 			this->r0->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000, 0, 0, 0 });
 			this->r0->Location = System::Drawing::Point(29, 93);
 			this->r0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->r0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			this->r0->Name = L"r0";
 			this->r0->Size = System::Drawing::Size(83, 20);
 			this->r0->TabIndex = 2;
 			this->r0->ThousandsSeparator = true;
-			this->r0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 45000, 0, 0, 0 });
+			this->r0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
 			// 
 			// label24
 			// 
@@ -640,43 +636,43 @@ namespace OrbitNavigation {
 			// 
 			// chart1
 			// 
-			chartArea3->AxisX->Maximum = 1000000;
-			chartArea3->AxisX->Minimum = -1000000;
-			chartArea3->AxisX->MinorGrid->Enabled = true;
-			chartArea3->AxisX->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
-			chartArea3->AxisX->MinorTickMark->LineColor = System::Drawing::Color::DarkGray;
-			chartArea3->AxisY->Maximum = 1000000;
-			chartArea3->AxisY->Minimum = -1000000;
-			chartArea3->AxisY->MinorGrid->Enabled = true;
-			chartArea3->AxisY->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
-			chartArea3->Name = L"ChartArea1";
-			this->chart1->ChartAreas->Add(chartArea3);
+			chartArea1->AxisX->Maximum = 250;
+			chartArea1->AxisX->Minimum = -250;
+			chartArea1->AxisX->MinorGrid->Enabled = true;
+			chartArea1->AxisX->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
+			chartArea1->AxisX->MinorTickMark->LineColor = System::Drawing::Color::DarkGray;
+			chartArea1->AxisY->Maximum = 250;
+			chartArea1->AxisY->Minimum = -250;
+			chartArea1->AxisY->MinorGrid->Enabled = true;
+			chartArea1->AxisY->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
+			chartArea1->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea1);
 			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->chart1->Location = System::Drawing::Point(182, 22);
-			this->chart1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->chart1->Margin = System::Windows::Forms::Padding(2);
 			this->chart1->Name = L"chart1";
 			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Grayscale;
 			this->tableLayoutPanel1->SetRowSpan(this->chart1, 2);
-			series5->ChartArea = L"ChartArea1";
-			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Bubble;
-			series5->CustomProperties = L"IsXAxisQuantitative=True";
-			series5->LabelForeColor = System::Drawing::Color::Orange;
-			series5->Name = L"Series2";
-			dataPoint3->Color = System::Drawing::Color::Orange;
-			dataPoint3->LabelForeColor = System::Drawing::Color::Black;
-			dataPoint3->MarkerSize = 5;
-			dataPoint3->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Star10;
-			series5->Points->Add(dataPoint3);
-			series5->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series5->YValuesPerPoint = 2;
-			series5->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series6->ChartArea = L"ChartArea1";
-			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
-			series6->Name = L"Series1";
-			series6->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			series6->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
-			this->chart1->Series->Add(series5);
-			this->chart1->Series->Add(series6);
+			series1->ChartArea = L"ChartArea1";
+			series1->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Bubble;
+			series1->CustomProperties = L"IsXAxisQuantitative=True";
+			series1->LabelForeColor = System::Drawing::Color::Orange;
+			series1->Name = L"Series2";
+			dataPoint1->Color = System::Drawing::Color::Orange;
+			dataPoint1->LabelForeColor = System::Drawing::Color::Black;
+			dataPoint1->MarkerSize = 5;
+			dataPoint1->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Star10;
+			series1->Points->Add(dataPoint1);
+			series1->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series1->YValuesPerPoint = 2;
+			series1->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series2->ChartArea = L"ChartArea1";
+			series2->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
+			series2->Name = L"Series1";
+			series2->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series2->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			this->chart1->Series->Add(series1);
+			this->chart1->Series->Add(series2);
 			this->chart1->Size = System::Drawing::Size(555, 487);
 			this->chart1->TabIndex = 2;
 			this->chart1->Text = L"chart1";
@@ -692,9 +688,9 @@ namespace OrbitNavigation {
 			this->groupBox1->Controls->Add(this->label4);
 			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->groupBox1->Location = System::Drawing::Point(2, 22);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2);
 			this->groupBox1->Size = System::Drawing::Size(156, 102);
 			this->groupBox1->TabIndex = 3;
 			this->groupBox1->TabStop = false;
@@ -705,12 +701,11 @@ namespace OrbitNavigation {
 			this->yMax->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->yMax->Location = System::Drawing::Point(30, 45);
 			this->yMax->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000000, 0, 0, 0 });
-			this->yMax->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->yMax->Name = L"yMax";
 			this->yMax->Size = System::Drawing::Size(83, 20);
 			this->yMax->TabIndex = 18;
 			this->yMax->ThousandsSeparator = true;
-			this->yMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
+			this->yMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250, 0, 0, 0 });
 			// 
 			// RebuildAxis
 			// 
@@ -727,12 +722,11 @@ namespace OrbitNavigation {
 			this->xMax->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->xMax->Location = System::Drawing::Point(30, 18);
 			this->xMax->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000000, 0, 0, 0 });
-			this->xMax->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->xMax->Name = L"xMax";
 			this->xMax->Size = System::Drawing::Size(83, 20);
 			this->xMax->TabIndex = 13;
 			this->xMax->ThousandsSeparator = true;
-			this->xMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
+			this->xMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 250, 0, 0, 0 });
 			// 
 			// label1
 			// 

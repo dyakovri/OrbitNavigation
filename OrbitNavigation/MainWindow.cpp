@@ -63,7 +63,7 @@ namespace OrbitNavigation {
 	}
 
 	System::Void MainWindow::timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
-		t += s->Step(timer1->Interval);
+		t = s->Step(timer1->Interval);
 
 		TimeLabel->Text = "Время со старта : " + ((Int64)t).ToString() + " c";
 		CoordsLabel->Text = "Координаты: " + ((Int64)s->GetX()).ToString() + " км, " + ((Int64)s->GetY()).ToString() + " км";
