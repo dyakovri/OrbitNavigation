@@ -44,7 +44,7 @@ std::vector<double> RungeKutta::NextStep(double dt)
 		throw std::exception();
 	}
 
-	// рассчитать Y1
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ Y1
 	Y1 = F(t, Y);
 
 	for (i = 0; i < Y.size(); i++)
@@ -52,7 +52,7 @@ std::vector<double> RungeKutta::NextStep(double dt)
 		YY[i] = Y[i] + Y1[i] * (dt / 2.0);
 	}
 
-	// рассчитать Y2
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ Y2
 	Y2 = F(t + dt / 2.0, YY);
 
 	for (i = 0; i < Y.size(); i++)
@@ -60,7 +60,7 @@ std::vector<double> RungeKutta::NextStep(double dt)
 		YY[i] = Y[i] + Y2[i] * (dt / 2.0);
 	}
 
-	// рассчитать Y3
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ Y3
 	Y3 = F(t + dt / 2.0, YY);
 
 	for (i = 0; i < Y.size(); i++)
@@ -68,16 +68,16 @@ std::vector<double> RungeKutta::NextStep(double dt)
 		YY[i] = Y[i] + Y3[i] * dt;
 	}
 
-	// рассчитать Y4
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ Y4
 	Y4 = F(t + dt, YY);
 
-	// рассчитать решение на новом шаге
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ СЂРµС€РµРЅРёРµ РЅР° РЅРѕРІРѕРј С€Р°РіРµ
 	for (i = 0; i < Y.size(); i++)
 	{
 		Y[i] = Y[i] + dt / 6.0 * (Y1[i] + 2.0 * Y2[i] + 2.0 * Y3[i] + Y4[i]);
 	}
 
-	// рассчитать текущее время
+	// СЂР°СЃСЃС‡РёС‚Р°С‚СЊ С‚РµРєСѓС‰РµРµ РІСЂРµРјСЏ
 	t = t + dt;
 
 	return FY;
