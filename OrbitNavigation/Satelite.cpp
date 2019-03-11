@@ -42,8 +42,8 @@ double Satelite::Feng(double t) {
 	return 0;
 }
 
-double Satelite::FengY(double t) { return Feng(t)*cos(AngleF); }
-double Satelite::FengX(double t) { return Feng(t)*sin(AngleF); }
+double Satelite::FengY(double t) { return Feng(t)*cos(AngleF)*cos(GetPhi()); }
+double Satelite::FengX(double t) { return Feng(t)*sin(AngleF)*sin(GetPhi()); }
 
 void Satelite::StartEngine(double EngineF, double AngleF, double tStartF, double durationF) {
 	this->EngineF = EngineF;
