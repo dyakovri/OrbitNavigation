@@ -37,18 +37,18 @@ namespace OrbitNavigation {
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
 	protected:
 	private: System::Windows::Forms::TableLayoutPanel^  tableLayoutPanel1;
-	private: System::Windows::Forms::GroupBox^  groupBox1;
-	private: System::Windows::Forms::NumericUpDown^  y0;
 
-	private: System::Windows::Forms::NumericUpDown^  x0;
 
-	private: System::Windows::Forms::Label^  label5;
-	private: System::Windows::Forms::Label^  label3;
-	private: System::Windows::Forms::Label^  label1;
-	private: System::Windows::Forms::Button^  MakeAxis;
 
-	private: System::Windows::Forms::Label^  label4;
-	private: System::Windows::Forms::Label^  label2;
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::GroupBox^  groupBox2;
 	private: System::Windows::Forms::NumericUpDown^  phi0;
 
@@ -59,7 +59,7 @@ namespace OrbitNavigation {
 	private: System::Windows::Forms::Label^  label6;
 	private: System::Windows::Forms::Label^  label8;
 	private: System::Windows::Forms::Label^  label7;
-	private: System::Windows::Forms::PictureBox^  graphBox;
+
 
 	private: System::Windows::Forms::Button^  SatEngine;
 
@@ -76,7 +76,8 @@ namespace OrbitNavigation {
 	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::Label^  label19;
 	private: System::Windows::Forms::Label^  label20;
-	private: System::Windows::Forms::NumericUpDown^  AngleV;
+	private: System::Windows::Forms::NumericUpDown^  Theta;
+
 
 	private: System::Windows::Forms::NumericUpDown^  v0;
 
@@ -94,16 +95,36 @@ namespace OrbitNavigation {
 	private: System::Windows::Forms::Label^  label11;
 	private: System::Windows::Forms::Label^  label12;
 	private: System::Windows::Forms::Label^  label21;
-	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel4;
-	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
-	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel2;
-	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel3;
+	private: System::Windows::Forms::ToolStripStatusLabel^  StatusLabel;
+	private: System::Windows::Forms::ToolStripStatusLabel^  TimeLabel;
+	private: System::Windows::Forms::ToolStripStatusLabel^  VelocityLabel;
+	private: System::Windows::Forms::ToolStripStatusLabel^  CoordsLabel;
+
+
+
+
+	private: System::Windows::Forms::DataVisualization::Charting::Chart^  chart1;
+	private: System::Windows::Forms::Timer^  timer1;
+	private: System::Windows::Forms::Button^  PauseSat;
+	private: System::Windows::Forms::GroupBox^  groupBox1;
+	private: System::Windows::Forms::NumericUpDown^  yMax;
+	private: System::Windows::Forms::Button^  RebuildAxis;
+	private: System::Windows::Forms::NumericUpDown^  xMax;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
+	private: System::Windows::Forms::Label^  label3;
+	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::NumericUpDown^  AngleF;
+	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label25;
+
+	private: System::ComponentModel::IContainer^  components;
 
 	private:
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -112,22 +133,23 @@ namespace OrbitNavigation {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
+			System::Windows::Forms::DataVisualization::Charting::ChartArea^  chartArea3 = (gcnew System::Windows::Forms::DataVisualization::Charting::ChartArea());
+			System::Windows::Forms::DataVisualization::Charting::Series^  series5 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
+			System::Windows::Forms::DataVisualization::Charting::DataPoint^  dataPoint3 = (gcnew System::Windows::Forms::DataVisualization::Charting::DataPoint(0,
+				L"0,6000"));
+			System::Windows::Forms::DataVisualization::Charting::Series^  series6 = (gcnew System::Windows::Forms::DataVisualization::Charting::Series());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
-			this->toolStripStatusLabel4 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
-			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
-			this->toolStripStatusLabel2 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
-			this->toolStripStatusLabel3 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->StatusLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->TimeLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->VelocityLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->CoordsLabel = (gcnew System::Windows::Forms::ToolStripStatusLabel());
 			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
-			this->y0 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->x0 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->MakeAxis = (gcnew System::Windows::Forms::Button());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->AngleF = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->PauseSat = (gcnew System::Windows::Forms::Button());
 			this->SatEngine = (gcnew System::Windows::Forms::Button());
 			this->StartSat = (gcnew System::Windows::Forms::Button());
 			this->EngineT = (gcnew System::Windows::Forms::NumericUpDown());
@@ -137,7 +159,7 @@ namespace OrbitNavigation {
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label19 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
-			this->AngleV = (gcnew System::Windows::Forms::NumericUpDown());
+			this->Theta = (gcnew System::Windows::Forms::NumericUpDown());
 			this->v0 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->PlanetM = (gcnew System::Windows::Forms::NumericUpDown());
 			this->phi0 = (gcnew System::Windows::Forms::NumericUpDown());
@@ -157,29 +179,40 @@ namespace OrbitNavigation {
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->graphBox = (gcnew System::Windows::Forms::PictureBox());
+			this->chart1 = (gcnew System::Windows::Forms::DataVisualization::Charting::Chart());
+			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->yMax = (gcnew System::Windows::Forms::NumericUpDown());
+			this->RebuildAxis = (gcnew System::Windows::Forms::Button());
+			this->xMax = (gcnew System::Windows::Forms::NumericUpDown());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->statusStrip1->SuspendLayout();
 			this->tableLayoutPanel1->SuspendLayout();
-			this->groupBox1->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->y0))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->x0))->BeginInit();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AngleF))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EngineT))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EngineF))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AngleV))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Theta))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->v0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->PlanetM))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->phi0))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SatM))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->r0))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graphBox))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->BeginInit();
+			this->groupBox1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yMax))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->xMax))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// statusStrip1
 			// 
+			this->statusStrip1->ImageScalingSize = System::Drawing::Size(20, 20);
 			this->statusStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->toolStripStatusLabel4,
-					this->toolStripStatusLabel1, this->toolStripStatusLabel2, this->toolStripStatusLabel3
+				this->StatusLabel, this->TimeLabel,
+					this->VelocityLabel, this->CoordsLabel
 			});
 			this->statusStrip1->Location = System::Drawing::Point(0, 531);
 			this->statusStrip1->Name = L"statusStrip1";
@@ -187,29 +220,29 @@ namespace OrbitNavigation {
 			this->statusStrip1->TabIndex = 0;
 			this->statusStrip1->Text = L"statusStrip1";
 			// 
-			// toolStripStatusLabel4
+			// StatusLabel
 			// 
-			this->toolStripStatusLabel4->Name = L"toolStripStatusLabel4";
-			this->toolStripStatusLabel4->Size = System::Drawing::Size(73, 17);
-			this->toolStripStatusLabel4->Text = L"Остановлен";
+			this->StatusLabel->Name = L"StatusLabel";
+			this->StatusLabel->Size = System::Drawing::Size(73, 17);
+			this->StatusLabel->Text = L"Остановлен";
 			// 
-			// toolStripStatusLabel1
+			// TimeLabel
 			// 
-			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-			this->toolStripStatusLabel1->Size = System::Drawing::Size(117, 17);
-			this->toolStripStatusLabel1->Text = L"Время со старта: 0 с";
+			this->TimeLabel->Name = L"TimeLabel";
+			this->TimeLabel->Size = System::Drawing::Size(117, 17);
+			this->TimeLabel->Text = L"Время со старта: 0 с";
 			// 
-			// toolStripStatusLabel2
+			// VelocityLabel
 			// 
-			this->toolStripStatusLabel2->Name = L"toolStripStatusLabel2";
-			this->toolStripStatusLabel2->Size = System::Drawing::Size(128, 17);
-			this->toolStripStatusLabel2->Text = L"Скорость: 0 м/с, 2 рад";
+			this->VelocityLabel->Name = L"VelocityLabel";
+			this->VelocityLabel->Size = System::Drawing::Size(100, 17);
+			this->VelocityLabel->Text = L"Скорость: 0 км/с";
 			// 
-			// toolStripStatusLabel3
+			// CoordsLabel
 			// 
-			this->toolStripStatusLabel3->Name = L"toolStripStatusLabel3";
-			this->toolStripStatusLabel3->Size = System::Drawing::Size(135, 17);
-			this->toolStripStatusLabel3->Text = L"Координаты: 0 км, 0 км";
+			this->CoordsLabel->Name = L"CoordsLabel";
+			this->CoordsLabel->Size = System::Drawing::Size(135, 17);
+			this->CoordsLabel->Text = L"Координаты: 0 км, 0 км";
 			// 
 			// tableLayoutPanel1
 			// 
@@ -222,117 +255,26 @@ namespace OrbitNavigation {
 				100)));
 			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Absolute,
 				20)));
-			this->tableLayoutPanel1->Controls->Add(this->groupBox1, 0, 1);
 			this->tableLayoutPanel1->Controls->Add(this->groupBox2, 0, 2);
-			this->tableLayoutPanel1->Controls->Add(this->graphBox, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->chart1, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->groupBox1, 0, 1);
 			this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->tableLayoutPanel1->Location = System::Drawing::Point(0, 0);
 			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
 			this->tableLayoutPanel1->RowCount = 4;
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
-			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 120)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 106)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 100)));
 			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
 			this->tableLayoutPanel1->Size = System::Drawing::Size(759, 531);
 			this->tableLayoutPanel1->TabIndex = 1;
 			// 
-			// groupBox1
-			// 
-			this->groupBox1->Controls->Add(this->y0);
-			this->groupBox1->Controls->Add(this->x0);
-			this->groupBox1->Controls->Add(this->label5);
-			this->groupBox1->Controls->Add(this->label3);
-			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Controls->Add(this->MakeAxis);
-			this->groupBox1->Controls->Add(this->label4);
-			this->groupBox1->Controls->Add(this->label2);
-			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->groupBox1->Location = System::Drawing::Point(3, 23);
-			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Size = System::Drawing::Size(154, 114);
-			this->groupBox1->TabIndex = 0;
-			this->groupBox1->TabStop = false;
-			this->groupBox1->Text = L"Управление графиком";
-			// 
-			// y0
-			// 
-			this->y0->Location = System::Drawing::Point(29, 58);
-			this->y0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->y0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-			this->y0->Name = L"y0";
-			this->y0->Size = System::Drawing::Size(83, 20);
-			this->y0->TabIndex = 2;
-			this->y0->ThousandsSeparator = true;
-			this->y0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50000, 0, 0, 0 });
-			// 
-			// x0
-			// 
-			this->x0->Location = System::Drawing::Point(29, 32);
-			this->x0->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
-			this->x0->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100, 0, 0, 0 });
-			this->x0->Name = L"x0";
-			this->x0->Size = System::Drawing::Size(83, 20);
-			this->x0->TabIndex = 2;
-			this->x0->ThousandsSeparator = true;
-			this->x0->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 50000, 0, 0, 0 });
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(116, 60);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(21, 13);
-			this->label5->TabIndex = 3;
-			this->label5->Text = L"км";
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(9, 60);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(17, 13);
-			this->label3->TabIndex = 3;
-			this->label3->Text = L"Y:";
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(9, 16);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(98, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"Размеры области";
-			// 
-			// MakeAxis
-			// 
-			this->MakeAxis->Location = System::Drawing::Point(6, 84);
-			this->MakeAxis->Name = L"MakeAxis";
-			this->MakeAxis->Size = System::Drawing::Size(142, 23);
-			this->MakeAxis->TabIndex = 2;
-			this->MakeAxis->Text = L"Установить";
-			this->MakeAxis->UseVisualStyleBackColor = true;
-			this->MakeAxis->Click += gcnew System::EventHandler(this, &MainWindow::MakeAxis_Click);
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(116, 34);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(21, 13);
-			this->label4->TabIndex = 2;
-			this->label4->Text = L"км";
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(9, 34);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(17, 13);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"X:";
-			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->AngleF);
+			this->groupBox2->Controls->Add(this->label5);
+			this->groupBox2->Controls->Add(this->label25);
+			this->groupBox2->Controls->Add(this->PauseSat);
 			this->groupBox2->Controls->Add(this->SatEngine);
 			this->groupBox2->Controls->Add(this->StartSat);
 			this->groupBox2->Controls->Add(this->EngineT);
@@ -342,7 +284,7 @@ namespace OrbitNavigation {
 			this->groupBox2->Controls->Add(this->label18);
 			this->groupBox2->Controls->Add(this->label19);
 			this->groupBox2->Controls->Add(this->label20);
-			this->groupBox2->Controls->Add(this->AngleV);
+			this->groupBox2->Controls->Add(this->Theta);
 			this->groupBox2->Controls->Add(this->v0);
 			this->groupBox2->Controls->Add(this->PlanetM);
 			this->groupBox2->Controls->Add(this->phi0);
@@ -363,20 +305,61 @@ namespace OrbitNavigation {
 			this->groupBox2->Controls->Add(this->label8);
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->groupBox2->Location = System::Drawing::Point(3, 143);
+			this->groupBox2->Location = System::Drawing::Point(3, 129);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Size = System::Drawing::Size(154, 365);
+			this->groupBox2->Size = System::Drawing::Size(154, 379);
 			this->groupBox2->TabIndex = 1;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Управление полетом";
 			// 
+			// AngleF
+			// 
+			this->AngleF->DecimalPlaces = 2;
+			this->AngleF->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 65536 });
+			this->AngleF->Location = System::Drawing::Point(29, 294);
+			this->AngleF->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 7, 0, 0, 0 });
+			this->AngleF->Name = L"AngleF";
+			this->AngleF->Size = System::Drawing::Size(83, 20);
+			this->AngleF->TabIndex = 12;
+			this->AngleF->ThousandsSeparator = true;
+			this->AngleF->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 114, 0, 0, 131072 });
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Location = System::Drawing::Point(116, 297);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(13, 13);
+			this->label5->TabIndex = 13;
+			this->label5->Text = L"c";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(9, 297);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(17, 13);
+			this->label25->TabIndex = 14;
+			this->label25->Text = L"α:";
+			// 
+			// PauseSat
+			// 
+			this->PauseSat->Enabled = false;
+			this->PauseSat->Location = System::Drawing::Point(127, 219);
+			this->PauseSat->Name = L"PauseSat";
+			this->PauseSat->Size = System::Drawing::Size(21, 23);
+			this->PauseSat->TabIndex = 11;
+			this->PauseSat->Text = L"||";
+			this->PauseSat->UseVisualStyleBackColor = true;
+			this->PauseSat->Click += gcnew System::EventHandler(this, &MainWindow::PauseSat_Click);
+			// 
 			// SatEngine
 			// 
-			this->SatEngine->Location = System::Drawing::Point(6, 322);
+			this->SatEngine->Location = System::Drawing::Point(6, 343);
 			this->SatEngine->Name = L"SatEngine";
 			this->SatEngine->Size = System::Drawing::Size(142, 23);
 			this->SatEngine->TabIndex = 4;
-			this->SatEngine->Text = L"Запуск";
+			this->SatEngine->Text = L"Запуск двигателя";
 			this->SatEngine->UseVisualStyleBackColor = true;
 			this->SatEngine->Click += gcnew System::EventHandler(this, &MainWindow::SatEngine_Click);
 			// 
@@ -384,7 +367,7 @@ namespace OrbitNavigation {
 			// 
 			this->StartSat->Location = System::Drawing::Point(6, 219);
 			this->StartSat->Name = L"StartSat";
-			this->StartSat->Size = System::Drawing::Size(142, 23);
+			this->StartSat->Size = System::Drawing::Size(115, 23);
 			this->StartSat->TabIndex = 4;
 			this->StartSat->Text = L"Запуск";
 			this->StartSat->UseVisualStyleBackColor = true;
@@ -392,7 +375,7 @@ namespace OrbitNavigation {
 			// 
 			// EngineT
 			// 
-			this->EngineT->Location = System::Drawing::Point(29, 296);
+			this->EngineT->Location = System::Drawing::Point(29, 318);
 			this->EngineT->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
 			this->EngineT->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->EngineT->Name = L"EngineT";
@@ -415,7 +398,7 @@ namespace OrbitNavigation {
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(116, 298);
+			this->label16->Location = System::Drawing::Point(116, 321);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(13, 13);
 			this->label16->TabIndex = 9;
@@ -424,7 +407,7 @@ namespace OrbitNavigation {
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(9, 298);
+			this->label17->Location = System::Drawing::Point(9, 321);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(13, 13);
 			this->label17->TabIndex = 10;
@@ -457,17 +440,17 @@ namespace OrbitNavigation {
 			this->label20->TabIndex = 8;
 			this->label20->Text = L"Н";
 			// 
-			// AngleV
+			// Theta
 			// 
-			this->AngleV->DecimalPlaces = 4;
-			this->AngleV->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 262144 });
-			this->AngleV->Location = System::Drawing::Point(29, 193);
-			this->AngleV->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1253305502, 146, 0, 720896 });
-			this->AngleV->Name = L"AngleV";
-			this->AngleV->Size = System::Drawing::Size(83, 20);
-			this->AngleV->TabIndex = 2;
-			this->AngleV->ThousandsSeparator = true;
-			this->AngleV->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
+			this->Theta->DecimalPlaces = 4;
+			this->Theta->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 262144 });
+			this->Theta->Location = System::Drawing::Point(29, 193);
+			this->Theta->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1253305502, 146, 0, 720896 });
+			this->Theta->Name = L"Theta";
+			this->Theta->Size = System::Drawing::Size(83, 20);
+			this->Theta->TabIndex = 2;
+			this->Theta->ThousandsSeparator = true;
+			this->Theta->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 2, 0, 0, 0 });
 			// 
 			// v0
 			// 
@@ -655,16 +638,141 @@ namespace OrbitNavigation {
 			this->label7->TabIndex = 2;
 			this->label7->Text = L"км";
 			// 
-			// graphBox
+			// chart1
 			// 
-			this->graphBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->graphBox->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->graphBox->Location = System::Drawing::Point(183, 23);
-			this->graphBox->Name = L"graphBox";
-			this->tableLayoutPanel1->SetRowSpan(this->graphBox, 2);
-			this->graphBox->Size = System::Drawing::Size(553, 485);
-			this->graphBox->TabIndex = 2;
-			this->graphBox->TabStop = false;
+			chartArea3->AxisX->Maximum = 1000000;
+			chartArea3->AxisX->Minimum = -1000000;
+			chartArea3->AxisX->MinorGrid->Enabled = true;
+			chartArea3->AxisX->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
+			chartArea3->AxisX->MinorTickMark->LineColor = System::Drawing::Color::DarkGray;
+			chartArea3->AxisY->Maximum = 1000000;
+			chartArea3->AxisY->Minimum = -1000000;
+			chartArea3->AxisY->MinorGrid->Enabled = true;
+			chartArea3->AxisY->MinorGrid->LineColor = System::Drawing::Color::DarkGray;
+			chartArea3->Name = L"ChartArea1";
+			this->chart1->ChartAreas->Add(chartArea3);
+			this->chart1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->chart1->Location = System::Drawing::Point(182, 22);
+			this->chart1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->chart1->Name = L"chart1";
+			this->chart1->Palette = System::Windows::Forms::DataVisualization::Charting::ChartColorPalette::Grayscale;
+			this->tableLayoutPanel1->SetRowSpan(this->chart1, 2);
+			series5->ChartArea = L"ChartArea1";
+			series5->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::Bubble;
+			series5->CustomProperties = L"IsXAxisQuantitative=True";
+			series5->LabelForeColor = System::Drawing::Color::Orange;
+			series5->Name = L"Series2";
+			dataPoint3->Color = System::Drawing::Color::Orange;
+			dataPoint3->LabelForeColor = System::Drawing::Color::Black;
+			dataPoint3->MarkerSize = 5;
+			dataPoint3->MarkerStyle = System::Windows::Forms::DataVisualization::Charting::MarkerStyle::Star10;
+			series5->Points->Add(dataPoint3);
+			series5->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series5->YValuesPerPoint = 2;
+			series5->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series6->ChartArea = L"ChartArea1";
+			series6->ChartType = System::Windows::Forms::DataVisualization::Charting::SeriesChartType::FastPoint;
+			series6->Name = L"Series1";
+			series6->XValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			series6->YValueType = System::Windows::Forms::DataVisualization::Charting::ChartValueType::Double;
+			this->chart1->Series->Add(series5);
+			this->chart1->Series->Add(series6);
+			this->chart1->Size = System::Drawing::Size(555, 487);
+			this->chart1->TabIndex = 2;
+			this->chart1->Text = L"chart1";
+			// 
+			// groupBox1
+			// 
+			this->groupBox1->Controls->Add(this->yMax);
+			this->groupBox1->Controls->Add(this->RebuildAxis);
+			this->groupBox1->Controls->Add(this->xMax);
+			this->groupBox1->Controls->Add(this->label1);
+			this->groupBox1->Controls->Add(this->label2);
+			this->groupBox1->Controls->Add(this->label3);
+			this->groupBox1->Controls->Add(this->label4);
+			this->groupBox1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->groupBox1->Location = System::Drawing::Point(2, 22);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Name = L"groupBox1";
+			this->groupBox1->Padding = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->groupBox1->Size = System::Drawing::Size(156, 102);
+			this->groupBox1->TabIndex = 3;
+			this->groupBox1->TabStop = false;
+			this->groupBox1->Text = L"Управление графиком";
+			// 
+			// yMax
+			// 
+			this->yMax->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->yMax->Location = System::Drawing::Point(30, 45);
+			this->yMax->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000000, 0, 0, 0 });
+			this->yMax->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->yMax->Name = L"yMax";
+			this->yMax->Size = System::Drawing::Size(83, 20);
+			this->yMax->TabIndex = 18;
+			this->yMax->ThousandsSeparator = true;
+			this->yMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
+			// 
+			// RebuildAxis
+			// 
+			this->RebuildAxis->Location = System::Drawing::Point(7, 70);
+			this->RebuildAxis->Name = L"RebuildAxis";
+			this->RebuildAxis->Size = System::Drawing::Size(142, 23);
+			this->RebuildAxis->TabIndex = 11;
+			this->RebuildAxis->Text = L"Перестроить";
+			this->RebuildAxis->UseVisualStyleBackColor = true;
+			this->RebuildAxis->Click += gcnew System::EventHandler(this, &MainWindow::RebuildAxis_Click);
+			// 
+			// xMax
+			// 
+			this->xMax->Increment = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->xMax->Location = System::Drawing::Point(30, 18);
+			this->xMax->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000000, 0, 0, 0 });
+			this->xMax->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, 0 });
+			this->xMax->Name = L"xMax";
+			this->xMax->Size = System::Drawing::Size(83, 20);
+			this->xMax->TabIndex = 13;
+			this->xMax->ThousandsSeparator = true;
+			this->xMax->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1000000, 0, 0, 0 });
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(117, 46);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(21, 13);
+			this->label1->TabIndex = 16;
+			this->label1->Text = L"км";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(10, 46);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(24, 13);
+			this->label2->TabIndex = 17;
+			this->label2->Text = L"|Y|<";
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(10, 20);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(24, 13);
+			this->label3->TabIndex = 14;
+			this->label3->Text = L"|X|<";
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Location = System::Drawing::Point(117, 20);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(21, 13);
+			this->label4->TabIndex = 15;
+			this->label4->Text = L"км";
+			// 
+			// timer1
+			// 
+			this->timer1->Tick += gcnew System::EventHandler(this, &MainWindow::timer1_Tick);
 			// 
 			// MainWindow
 			// 
@@ -673,36 +781,39 @@ namespace OrbitNavigation {
 			this->ClientSize = System::Drawing::Size(759, 553);
 			this->Controls->Add(this->tableLayoutPanel1);
 			this->Controls->Add(this->statusStrip1);
-			this->MinimumSize = System::Drawing::Size(200, 200);
+			this->MinimumSize = System::Drawing::Size(200, 198);
 			this->Name = L"MainWindow";
 			this->ShowIcon = false;
 			this->Text = L"Навгация на орбите";
 			this->statusStrip1->ResumeLayout(false);
 			this->statusStrip1->PerformLayout();
 			this->tableLayoutPanel1->ResumeLayout(false);
-			this->groupBox1->ResumeLayout(false);
-			this->groupBox1->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->y0))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->x0))->EndInit();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AngleF))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EngineT))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EngineF))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->AngleV))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Theta))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->v0))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->PlanetM))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->phi0))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->SatM))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->r0))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->graphBox))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->chart1))->EndInit();
+			this->groupBox1->ResumeLayout(false);
+			this->groupBox1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->yMax))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->xMax))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 
-		private: System::Void MakeAxis_Click(System::Object^  sender, System::EventArgs^  e);
 		private: System::Void StartSat_Click(System::Object^  sender, System::EventArgs^  e);
 		private: System::Void SatEngine_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void PauseSat_Click(System::Object^  sender, System::EventArgs^  e);
+		private: System::Void RebuildAxis_Click(System::Object^  sender, System::EventArgs^  e);
 	};
 }
